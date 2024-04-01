@@ -1,0 +1,45 @@
+﻿@{
+    Usuario user = ViewData["usuario"] as Usuario;
+}
+
+<h1 class="text-primary text-center">
+    Almacenando y mostrando el Objeto Usuario
+</h1>
+<br />
+<div class="d-flex gap-4 justify-content-center align-items-center">
+    <a asp-controller="Session" asp-action="GuardarObjetoSession"
+        asp-route-btnpulsado="1" class="btn btn-primary p-3">
+        Almacenar Usuario
+    </a>
+    <a asp-controller="Session" asp-action="GuardarObjetoSession"
+       asp-route-btnpulsado="2" class="btn btn-success p-3">
+        Mostrar Usuario
+    </a>
+</div>
+<br />
+<h2 class="text-secondary text-center">
+    @ViewData["mensaje"]
+</h2>
+
+@if(user != null)
+{
+    <h2>Usuario Almacenado</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Edad</th>
+                <th>Ciudad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@user.Nombre</td>
+                <td>@user.Email</td>
+                <td>@user.Edad</td>
+                <td>@user.Ciudad</td>
+            </tr>
+        </tbody>
+    </table>
+}

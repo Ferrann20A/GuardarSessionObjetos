@@ -12,7 +12,7 @@ namespace GuardarSessionObjetos.Controllers
             {
                 if(btnpulsado.Value == 1)
                 {
-                    //CREAMOS EL OBJETO COCHE QUE QUEREMOS GUARDAR EN SESSION
+                    //CREAMOS EL OBJETO USUARIO QUE QUEREMOS GUARDAR EN SESSION
                     Usuario user = new Usuario();
                     user.Nombre = "Usuario";
                     user.Email = "usuario@gmail.com";
@@ -23,9 +23,9 @@ namespace GuardarSessionObjetos.Controllers
                     ViewData["mensaje"] = "Se ha almacenado correctamente el objeto Usuario en Session";
                 }else if(btnpulsado.Value == 2)
                 {
-                    //RECUPERAMOS EL OBJETO COCHE ALMANCENADO EN SESSION
+                    //RECUPERAMOS EL OBJETO USUARIO ALMANCENADO EN SESSION
                     Usuario user = HttpContext.Session.GetObject<Usuario>("usuario");
-                    ViewData["coche"] = user;
+                    ViewData["usuario"] = user;
                 }
             }
             return View();
